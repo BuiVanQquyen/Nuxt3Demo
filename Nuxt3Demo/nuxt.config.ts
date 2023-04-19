@@ -4,23 +4,23 @@ export default defineNuxtConfig({
       dirs: ['stores'],
     },
     runtimeConfig: {
-        // Keys within public are also exposed client-side
-        public: {
-          apiBase: 'https://localhost:44390'
-        },
+      // Keys within public are also exposed client-side
+      public: {
+        apiBase: 'https://localhost:44390'
+      },
     },
     css: [
         '@/assets/css/tailwind.css'
     ],
     postcss: {
-        plugins: {
-          tailwindcss: {},
-          autoprefixer: {},
-        },
+      plugins: {
+        tailwindcss: {},
+        autoprefixer: {},
+      },
     },
     app: {
       head: {
-        title: 'V1-NuxtDemo',
+        title: 'V3-NuxtDemo',
         link: [
           { rel: 'icon', type: 'image/x-icon', href: '/flaticon.png' }
         ]
@@ -29,7 +29,12 @@ export default defineNuxtConfig({
     },
     modules: [
       // add pinia
-      '@pinia/nuxt',
+      [
+        '@pinia/nuxt',
+        {
+          autoImports: ['defineStore', 'acceptHMRUpdate'],
+        },
+      ]
     ],
     ssr: false,
     nitro: {
