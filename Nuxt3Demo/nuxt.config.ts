@@ -23,7 +23,7 @@ export default defineNuxtConfig({
         title: 'V3-NuxtDemo',
         link: [
           { rel: 'icon', type: 'image/x-icon', href: '/flaticon.png' }
-        ]
+        ],
       },
       
     },

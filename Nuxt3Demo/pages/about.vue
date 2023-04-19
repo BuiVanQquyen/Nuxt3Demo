@@ -1,10 +1,9 @@
 <template>
     <section>
-      <p>This page will be displayed at the /about route.</p>
+      <p>Page About của {{ user.fullName }}</p>
     </section>
 </template>
 <script setup>
-  definePageMeta({
-    middleware: ["auth"]
-  })
+  const authStore = useAuthStore()
+  const user = authStore.user
 </script>

@@ -35,6 +35,8 @@ export const useAuthStore = defineStore('AuthStore', {
                 /* Store user in local storage to keep them logged in between page refreshes */
                 localStorage.setItem('user', JSON.stringify(this.user))
                 localStorage.setItem('token', JSON.stringify(this.token))
+
+                await navigateTo({path: '/about'})
             } 
         },
         async logOut(){

@@ -7,10 +7,8 @@ export default defineNuxtRouteMiddleware(async (to, from) => {
     // check user login
     const userLogin = useAuth()
     console.log('userLogin:', userLogin)
-    if (userLogin && to.params.id && !from.params.id) {
-      return navigateTo('/about')
+
+    if(!userLogin){
+        return navigateTo('/login')
     }
-    // if (!userLogin) {
-    //   return abortNavigation()
-    // }
 })
