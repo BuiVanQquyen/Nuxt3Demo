@@ -37,9 +37,9 @@
 </template> 
 <script setup>
     definePageMeta({
-        layout: "custom",
+        layout: 'custom',
     });
-    const { $apiUrl } = useNuxtApp()
+
     const authStore = useAuthStore()
 
     const form = {
@@ -47,10 +47,9 @@
         password: undefined,
     };
 
-    const loginUrl = $apiUrl.API_LOG_IN
     const handleSubmit = async () => {
         try {
-            await authStore.login(loginUrl, form);
+            await authStore.login(form);
         } catch (error) {
             console.error(error);
         }

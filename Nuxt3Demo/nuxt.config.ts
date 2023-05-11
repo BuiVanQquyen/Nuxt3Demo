@@ -6,11 +6,12 @@ export default defineNuxtConfig({
     runtimeConfig: {
       // Keys within public are also exposed client-side
       public: {
-        apiBase: 'https://localhost:44390'
+        apiBase: 'https://localhost:44390/api'
       },
     },
     css: [
-        '@/assets/css/tailwind.css'
+      'ant-design-vue/dist/antd.css',
+      '@/assets/css/tailwind.css'
     ],
     postcss: {
       plugins: {
